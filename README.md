@@ -1,8 +1,11 @@
 # Projet JavaScript n°2
 
-**Je vous présente notre code pour le second projet en  JavaScript**
+## Installation
 
-## La liste des API
+```$ npm start```
+```$ npm install```
+
+## La liste des Dépendances
 
 1. NodeJs
 2. MongoDB
