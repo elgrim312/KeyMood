@@ -1,4 +1,5 @@
 console.log("hello");
+
 $(function () {
     $('#hello').on('keyup',function (event) {
         if (event.keyCode === 13 ) {
@@ -8,13 +9,14 @@ $(function () {
             });
             // find all tracks with the genre 'punk' that have a tempo greater than 120 bpm.
             SC.get('/tracks', {
-                order: event.target.value, bpm: { from: 120 }
+                //filtre pour le retour des variable 
+                q: event.target.value, bpm: { from: 120 }
             }).then(function(tracks) {
+                var random = Math.floor(Math.random()*tracks.length);
                 console.log(tracks[0].attachments_uri);
-                SC.oEmbed(tracks[6].permalink_url, {
+                SC.oEmbed(tracks[random].permalink_url, {
                     element: document.getElementById('putTheWidgetHere')
                 });
-                console.log(tracks);
             });
         }
     })
