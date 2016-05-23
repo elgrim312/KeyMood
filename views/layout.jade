@@ -1,11 +1,13 @@
 doctype html
 html
   head
-    title= title
+    title Soundcloud
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
-    script(src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js")
-    script(src="javascripts/main.js")
+    script(type="text/javascript", src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+    script(type="text/javascript", src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js")
+    script(type="text/javascript", src="http://code.responsivevoice.org/responsivevoice.js")
+    script(type="text/javascript", src="javascripts/actions.js")
+    script(type="text/javascript", src="javascripts/main.js")
   body
     block content
 
