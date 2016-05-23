@@ -10,3 +10,4 @@
 4. SoundCloud API
 5. Auth diverses (TBD)
 6. Web Speech API
+7. Jquery
