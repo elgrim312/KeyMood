@@ -1,5 +1,3 @@
-console.log("hello");
-
 $(function () {
     $('#hello').on('keyup',function (event) {
         if (event.keyCode === 13 ) {
@@ -21,3 +19,4 @@ $(function () {
         }
     })
 });
+
