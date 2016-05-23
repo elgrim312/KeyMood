@@ -5,7 +5,7 @@
 ## La liste des API
 
 1. NodeJs
-2. Mongo
+2. MongoDB
 3. Express 
 4. SoundCloud API
 5. Auth diverses (TBD)
