@@ -30,13 +30,11 @@ $(function () {
         var text = '';
         recognition.continuous = false;
         recognition.interimResults = true;
-
         // Début enregistrement vocal
         $('#background').click(function () {
             recognition.start();
             $('#result').text();
         });
-
         // Récuperation des mots
         recognition.onresult = function (event) {
             $('#result').text('');
@@ -50,6 +48,9 @@ $(function () {
                 }
             }
             console.log(transcript);
+            SC.initialize({
+                client_id: 'b7b0b906f719303677f1268c3d52b07b'
+            });
             SC.get('/tracks', {
                 //filtre pour le retour des variables
                 q: transcript, bpm: {from: 120}
