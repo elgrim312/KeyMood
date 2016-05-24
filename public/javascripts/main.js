@@ -45,33 +45,22 @@ $(function () {
 
                     recognition.stop();
                     var transcript = event.results[i][0].transcript;
-
-                    // Majuscules à chaques mots (recherche wikipédia)
-                    var words = transcript.split(' ');
-                    for (var j = 1; j < words.length; ++j) {
-                        words[j] = words[j].charAt(0).toUpperCase() + words[j].substring(1).toLowerCase();
-                    }
-
-                    // Lancement de command_action si la clé existe
-                    for (var i = 0; i < command.length; i++) {
-                        if (command[i] == words[0]) {
-                            command_action(words[0], transcript.replace(words[0], ''));
-                        }
-                    }
-
                     $('#result').text(transcript);
 
-                } else {
-                    $('#result').text($('#result').text() + event.results[i][0].transcript);
                 }
             }
-        };
-        // Efface la saisie
-        recognition.onend = function () {
-            window.setTimeout(function () {
-                $('#result').text('');
-            }, 2000);
-        };
+            console.log(transcript);
+            SC.get('/tracks', {
+                //filtre pour le retour des variables
+                q: transcript, bpm: {from: 120}
+            }).then(function (tracks) {
+                var random = Math.floor(Math.random() * tracks.length);
+                console.log(tracks[0].attachments_uri);
+                SC.oEmbed(tracks[random].permalink_url, {
+                    element: document.getElementById('putTheWidgetHere')
+                });
+            });
+        }
     }
 });
 
