@@ -4,6 +4,7 @@
 
 ```$ npm start```
 ```$ npm install```
+--> localhost:3000
 
 ## La liste des Dépendances
 

@@ -55,6 +55,7 @@ $(function () {
                     // Lancement de command_action si la clé existe
                     for (var i = 0; i < command.length; i++) {
                         if (command[i] == words[0]) {
+                            console.log(words[1]);
                             command_action(words[0], transcript.replace(words[0], ''));
                         }
                     }
