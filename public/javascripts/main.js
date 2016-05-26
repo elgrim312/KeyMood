@@ -60,7 +60,7 @@ $(function () {
                 SC.initialize({
                     client_id: 'b7b0b906f719303677f1268c3d52b07b'
                 });
-                SC.get('/tracks',{ auto_play: true },{
+                SC.get('/tracks',{
                     //filtre pour le retour des variables
                     q: transcript, bpm: {from: 120}
                 }).then(function (tracks) {
