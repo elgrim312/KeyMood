@@ -3,10 +3,10 @@
 ## Installation
 
 ```$ npm install```
-```$ npm start```
---> localhost:3001
+```$ npm start```  
+[http://localhost:3001/] (http://localhost:3001/) :feelsgood:  
 
-## La liste des Dépendances
+### La liste des Dépendances
 
 1. NodeJs
 2. MongoDB
@@ -16,8 +16,8 @@
 6. Jquery
 7. Mongoose
 
-## Usage
+### Usage
 
 Pour inserer dans la BD utiliser l'URL :  
-http://localhost:3001/api/data  
+[http://localhost:3001/] (http://localhost:3001/)  
 Pour les Test Utiliser [PostMan] (http://www.getpostman.com/)
