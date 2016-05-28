@@ -9,7 +9,6 @@ var Data = mongoose.model('data');
 //Charge la vue des Datas  avec Select dans la DB des Datas
 router.get('/data', function (req, res) {
     Data.find(function (err, datas) {
-        console.log(datas);
         res.render(
             'api',
             {title: 'Data', datas: datas}
@@ -19,11 +18,11 @@ router.get('/data', function (req, res) {
 
 //Insertions dans la DB des Datas
 router.post('/data', function (req, res) {
-    new Data({name: req.body.name})
-        .save(function (err, superhero) {
-            console.log(superhero);
+    new Data({mot1: req.body.mot1, mot2: req.body.mot2 ,mot3: req.body.mot3 })
+        .save(function (err, data) {
+            console.log(req.body);
             // @todo redirection a voir
-            // res.redirect('/api/superheros');
+            res.redirect('/api/data');
         });
 });
 
