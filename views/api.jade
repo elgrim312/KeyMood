@@ -1,3 +1,4 @@
+//On charge le Layout
 extends layout
 
 block content
@@ -6,6 +7,7 @@ block content
         br
         ul
             a
+            //On boucle dans l'objet rapporté de la DB avec EACH
             - each data in datas
                 li= data.name
 

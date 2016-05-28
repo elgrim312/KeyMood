@@ -6,6 +6,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Data = mongoose.model('data');
 
+//Charge la vue des Datas  avec Select dans la DB des Datas
 router.get('/data', function (req, res) {
     Data.find(function (err, datas) {
         console.log(datas);
@@ -16,6 +17,7 @@ router.get('/data', function (req, res) {
     });
 });
 
+//Insertions dans la DB des Datas
 router.post('/data', function (req, res) {
     new Data({name: req.body.name})
         .save(function (err, superhero) {

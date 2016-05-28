@@ -2,7 +2,7 @@
 
 ## Installation
 
-```$ npm install```
+```$ npm install```  
 ```$ npm start```  
 [http://localhost:3001/] (http://localhost:3001/) :feelsgood:  
 
