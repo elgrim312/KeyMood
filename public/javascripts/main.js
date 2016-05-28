@@ -1,17 +1,23 @@
+// start quant la page est prête
 $(function () {
+// prend les valeurs dans les inputs,  au click sur le  button ou  sur Keypress (ENTRER)
     $('#hello').on('keyup', function (event) {
         if (event.keyCode === 13) {
             console.log(event.target.value);
+// inicialisation  de l' API SoundCloud
             SC.initialize({
                 client_id: 'b7b0b906f719303677f1268c3d52b07b'
             });
-            // find all tracks with the genre 'punk' that have a tempo greater than 120 bpm.
+/* prend les valeurs des input est les passent dans (q), qui fait une  recherche par mot, peut êtres changer
+*   q, tags, filter, license ... pour plsu de d'information sur le contenue que renvoit le player go :
+*   (https://developers.soundcloud.com/docs/api/reference#tracks, rubrique FILTER)
+* */
             SC.get('/tracks', {
-                //filtre pour le retour des variables
                 q: event.target.value, bpm: {from: 120}
             }).then(function (tracks) {
                 var random = Math.floor(Math.random() * tracks.length);
                 console.log(tracks[0].attachments_uri);
+// insert le player dans la  div #putTheWidgetHere
                 SC.oEmbed(tracks[random].permalink_url,{
                     element: document.getElementById('putTheWidgetHere')
                 });
@@ -21,7 +27,6 @@ $(function () {
 
 
 //Speech Recognition
-
 // Test si le navigateur est compatible avec Web Speech API
     if ('webkitSpeechRecognition' in window) {
 
@@ -43,32 +48,38 @@ $(function () {
 
                     recognition.stop();
                     var transcript = event.results[i][0].transcript;
-                    $('#result').text(transcript);
                     var inputs = document.querySelectorAll('.recherche');
                     var words = transcript.split(' ');
                     var tab = [];
+// rentre dans un tableau les 3 mots tab[j]
                     for (var j = 0; j < inputs.length; j++) {
                         inputs[j].value = words[j];
                         tab[j] = words[j];
                     }
+// sort un nombre aléatoire en  fonction de la taille du tableau
                     var random_Tab = Math.floor(Math.random() * tab.length);
+// prend un mot dans l'index
                     var result_Finale = tab[random_Tab];
                 }
             }
-            console.log(result_Finale);
+// init le player pour la recherche vocal
             if (result_Finale != undefined ) {
                 SC.initialize({
                     client_id: 'b7b0b906f719303677f1268c3d52b07b'
                 });
                 SC.get('/tracks',{
                     //filtre pour le retour des variables
-                    q: transcript, bpm: {from: 120}
+                    q: result_Finale, bpm: {from: 120}
                 }).then(function (tracks) {
                     var random = Math.floor(Math.random() * tracks.length);
-                    console.log(tracks[0].attachments_uri);
-                    SC.oEmbed(tracks[random].permalink_url,{
-                        element: document.getElementById('putTheWidgetHere')
-                    });
+                    if (tracks.length > 0) {
+                        SC.oEmbed(tracks[random].permalink_url,{
+                            element: document.getElementById('putTheWidgetHere')
+                        });
+// si les mots rechercher return un  tableau vide alors affiche ...                         
+                    }else {
+                        $('#result').text("try again");
+                    }
                 });
             }
         };
