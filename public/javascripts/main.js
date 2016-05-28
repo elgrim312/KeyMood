@@ -27,7 +27,6 @@ $(function () {
 
         var recognition = new webkitSpeechRecognition();
         recognition.lang = "fr-FR";
-        var text = '';
         recognition.continuous = false;
         recognition.interimResults = true;
         // Début enregistrement vocal
