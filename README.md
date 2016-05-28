@@ -1,6 +1,6 @@
 # Projet JavaScript n°2
 
-## Installation
+### Installation
 
 ```$ npm install```  
 ```$ npm start```  
