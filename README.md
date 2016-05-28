@@ -12,7 +12,12 @@
 2. MongoDB
 3. Express 
 4. SoundCloud API
-5. Auth diverses (TBD)
-6. Web Speech API
-7. Jquery
-8. Mongoose (TBD)
+5. Web Speech API
+6. Jquery
+7. Mongoose
+
+## Usage
+
+Pour inserer dans la BD utiliser l'URL :
+http://localhost:3001/api/data
+Pour les Test Utiliser [PostMan] (http://www.getpostman.com/)
