@@ -22,7 +22,7 @@ router.post('/data', function (req, res) {
         .save(function (err, data) {
             console.log(req.body);
             // @todo redirection a voir
-            res.redirect('/api/data');
+            res.redirect('/');
         });
 });
 

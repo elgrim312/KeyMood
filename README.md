@@ -19,5 +19,5 @@
 ### Usage
 
 Pour inserer dans la BD utiliser l'URL :  
-[http://localhost:3001/] (http://localhost:3001/)  
+[http://localhost:3001/api/data] (http://localhost:3001/api/data)  
 Pour les Test Utiliser [PostMan] (http://www.getpostman.com/)
