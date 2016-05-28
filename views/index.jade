@@ -2,27 +2,34 @@ extends layout
 
 block content
     h1= title
-    input(
-        type="text"
-        id="hello"
-        style="display:none"
-    )
-    input(
-    type="text"
-    class="recherche"
-    )
-    input(
-    type="text"
-    class="recherche"
-    )
-    input(
-    type="text"
-    class="recherche"
-    )
+    form(role='form', action="/api/data",method="post")
+        input(
+            type="text"
+            id="hello"
+            style="display:none"
+            placeholder="YOlo"
+        )
+        input(
+            type="text"
+            class="recherche"
+            name="mot1"
+            placeholder="YOlo"
+        )
+        input(
+            type="text"
+            class="recherche"
+            name="mot2"
+            placeholder="YOlo"
+        )
+        input(
+            type="text"
+            class="recherche"
+            name="mot3"
+            placeholder="YOlo"
+        )
 
-    input(
-        type="submit"
-    )
+        input(type="submit")
+
     h1#background Test
     #putTheWidgetHere
     #result

@@ -19,11 +19,11 @@ router.get('/data', function (req, res) {
 
 //Insertions dans la DB des Datas
 router.post('/data', function (req, res) {
-    new Data({name: req.body.name})
-        .save(function (err, superhero) {
-            console.log(superhero);
+    new Data({mot1: req.body.mot1 })
+        .save(function (err, data) {
+            console.log(data);
             // @todo redirection a voir
-            // res.redirect('/api/superheros');
+            res.redirect('/api/data');
         });
 });
 
