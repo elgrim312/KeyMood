@@ -71,6 +71,7 @@ $(function () {
                     //filtre pour le retour des variables
                     q: result_Finale, bpm: {from: 120}
                 }).then(function (tracks) {
+                    console.log(tracks);
                     var random = Math.floor(Math.random() * tracks.length);
                     if (tracks.length > 0) {
                         SC.oEmbed(tracks[random].permalink_url,{
