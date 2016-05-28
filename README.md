@@ -18,6 +18,6 @@
 
 ## Usage
 
-Pour inserer dans la BD utiliser l'URL :
-http://localhost:3001/api/data
+Pour inserer dans la BD utiliser l'URL :  
+http://localhost:3001/api/data  
 Pour les Test Utiliser [PostMan] (http://www.getpostman.com/)
