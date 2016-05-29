@@ -8,8 +8,8 @@ $(function () {
             SC.initialize({
                 client_id: 'b7b0b906f719303677f1268c3d52b07b'
             });
-            /* prend les valeurs des input est les passent dans (q), qui fait une  recherche par mot, peut êtres changer
-             *   q, tags, filter, license ... pour plsu de d'information sur le contenue que renvoit le player go :
+            /* prend les valeurs des input est les passe dans (q), qui fait une  recherche par mot, peut être changé
+             *   q, tags, filter, license ... pour plus de d'information sur le contenu que renvoit le player go :
              *   (https://developers.soundcloud.com/docs/api/reference#tracks, rubrique FILTER)
              * */
             SC.get('/tracks', {
@@ -85,7 +85,7 @@ $(function () {
             }
         };
     }
-
+    // Fonction Ajax qui envoie les données de facon asyncrone a la DB
     //@todo Ajax avec trigger des inputs pour injection dans la DB
     $('#ajax').on('click', function (event) {
         var obj = {

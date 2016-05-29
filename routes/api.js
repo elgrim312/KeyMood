@@ -6,7 +6,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Data = mongoose.model('data');
 
-//Charge la vue des Datas  avec Select dans la DB des Datas
+//Charge la vue des Datas  avec "Select" dans la DB des Datas
 router.get('/data', function (req, res) {
     Data.find(function (err, datas) {
         res.render(
@@ -26,4 +26,5 @@ router.post('/data', function (req, res) {
         });
 });
 
+// on exporte le module 
 module.exports = router;
