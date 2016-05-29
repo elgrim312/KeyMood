@@ -18,10 +18,10 @@ router.get('/data', function (req, res) {
 
 //Insertions dans la DB des Datas
 router.post('/data', function (req, res) {
-    new Data({mot1: req.body.mot1, mot2: req.body.mot2 ,mot3: req.body.mot3 })
+    new Data({mot1: req.body.mot1, mot2: req.body.mot2, mot3: req.body.mot3})
         .save(function (err, data) {
-            console.log(req.body);
             // @todo redirection a voir
+            res.status(200);
             res.redirect('/');
         });
 });

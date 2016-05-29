@@ -85,5 +85,7 @@ $(function () {
             }
         };
     }
+
+    //@todo Ajax avec trigger des inputs pour injection dans la DB
 });
 
