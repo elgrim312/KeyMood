@@ -19,5 +19,5 @@
 
 ### Usage
 
-Pour les Tests Unitaires Utiliser [Mocha] (https://mochajs.org/)  
+Pour les Tests Utiliser [Mocha] (https://mochajs.org/)  
 ``$ mocha``
