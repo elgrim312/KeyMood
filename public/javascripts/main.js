@@ -1,15 +1,15 @@
 // start quant la page est prête
 $(function () {
-// prend les valeurs dans les inputs,  au click sur le  button ou  sur Keypress (ENTRER)
+    // prend les valeurs dans les inputs,  au click sur le  button ou sur Keypress (ENTRER)
     $('#hello').on('keyup', function (event) {
         if (event.keyCode === 13) {
             console.log(event.target.value);
-// inicialisation  de l' API SoundCloud
+            // initialisation  de l' API SoundCloud
             SC.initialize({
                 client_id: 'b7b0b906f719303677f1268c3d52b07b'
             });
-            /* prend les valeurs des input est les passe dans (q), qui fait une  recherche par mot, peut être changé
-             *   q, tags, filter, license ... pour plus de d'information sur le contenu que renvoit le player go :
+            /* prend les valeurs des input et les passe dans (q), qui fait une  recherche par mot, peut être changé
+             *   q, tags, filter, license ... pour plus de d'information sur le contenu que renvoie le player:
              *   (https://developers.soundcloud.com/docs/api/reference#tracks, rubrique FILTER)
              * */
             SC.get('/tracks', {
@@ -50,19 +50,21 @@ $(function () {
                     var transcript = event.results[i][0].transcript;
                     var inputs = document.querySelectorAll('.recherche');
                     var words = transcript.split(' ');
+                    // Call Ajax
+                    insertDB(words[0], words[1], words[2]);
                     var tab = [];
-// rentre dans un tableau les 3 mots tab[j]
+                    // rentre dans un tableau les 3 mots tab[j]
                     for (var j = 0; j < inputs.length; j++) {
                         inputs[j].value = words[j];
                         tab[j] = words[j];
                     }
-// sort un nombre aléatoire en  fonction de la taille du tableau
+                    // sort un nombre aléatoire en  fonction de la taille du tableau
                     var random_Tab = Math.floor(Math.random() * tab.length);
-// prend un mot dans l'index
+                    // prend un mot dans l'index
                     var result_Finale = tab[random_Tab];
                 }
             }
-// init le player pour la recherche vocal
+            // init le player pour la recherche vocal
             if (result_Finale != undefined) {
                 SC.initialize({
                     client_id: 'b7b0b906f719303677f1268c3d52b07b'
@@ -77,7 +79,7 @@ $(function () {
                         SC.oEmbed(tracks[random].permalink_url, {
                             element: document.getElementById('putTheWidgetHere')
                         });
-// si les mots rechercher return un  tableau vide alors affiche ...                         
+                        // si les mots rechercher return un  tableau vide alors affiche ...
                     } else {
                         $('#result').text("try again");
                     }
@@ -86,13 +88,11 @@ $(function () {
         };
     }
     // Fonction Ajax qui envoie les données de facon asyncrone a la DB
-    //@todo Ajax avec trigger des inputs pour injection dans la DB
-    $('#ajax').on('click', function (event) {
+    function insertDB(value1, value2, value3) {
         var obj = {
-            //@todo injecter de facon dynamique les datas
-            mot1: 'ajax',
-            mot2: 'marche',
-            mot3: 'pas trop mal'
+            mot1: value1,
+            mot2: value2,
+            mot3: value3
         };
         var URL = '/api/data';
         $.ajax({
@@ -110,6 +110,6 @@ $(function () {
                 console.log("probleme :(");
             }
         });
-    });
+    }
 });
 
