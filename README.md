@@ -15,9 +15,9 @@
 5. Web Speech API
 6. Jquery
 7. Mongoose
+8. Mocha/Chai
 
 ### Usage
 
-Pour inserer dans la BD utiliser l'URL :  
-[http://localhost:3001/api/data] (http://localhost:3001/api/data)  
-Pour les Test Utiliser [PostMan] (http://www.getpostman.com/)
+Pour les Tests Unitaires Utiliser Mocha   
+```$ mocha``
