@@ -101,7 +101,7 @@ $(function () {
             data: JSON.stringify(obj),
             contentType: "application/json",
             success: function (data) {
-                console.log('ajax call success');
+                console.log('ajax call success '+data);
             },
             error: function (xhr, text, err) {
                 console.log('error: ', err);
