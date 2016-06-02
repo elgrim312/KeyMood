@@ -50,12 +50,17 @@ $(function () {
                     var transcript = event.results[i][0].transcript;
                     var inputs = document.querySelectorAll('.recherche');
                     var words = transcript.split(' ');
+                    console.log(words);
                     var tab = [];
                     // rentre dans un tableau les 3 mots tab[j]
                     for (var j = 0; j < inputs.length; j++) {
-                        inputs[j].value = words[j];
-                        tab[j] = words[j];
+                        if (words[j] != undefined) {
+                            inputs[j].value = words[j];
+                            tab[j] = words[j];
+                        }
                     }
+                    console.log(tab);
+
                     // sort un nombre aléatoire en  fonction de la taille du tableau
                     var random_Tab = Math.floor(Math.random() * tab.length);
                     // prend un mot dans l'index
