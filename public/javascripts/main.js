@@ -50,8 +50,6 @@ $(function () {
                     var transcript = event.results[i][0].transcript;
                     var inputs = document.querySelectorAll('.recherche');
                     var words = transcript.split(' ');
-                    // Call Ajax
-                    insertDB(words[0], words[1], words[2]);
                     var tab = [];
                     // rentre dans un tableau les 3 mots tab[j]
                     for (var j = 0; j < inputs.length; j++) {
@@ -74,6 +72,9 @@ $(function () {
                     q: result_Finale, bpm: {from: 120}
                 }).then(function (tracks) {
                     console.log(tracks);
+                    // Call Ajax
+                    console.log('genre musical ' + tracks[0].genre);
+                    insertDB(words[0], words[1], words[2], tracks[0].genre);
                     var random = Math.floor(Math.random() * tracks.length);
                     if (tracks.length > 0) {
                         SC.oEmbed(tracks[random].permalink_url, {
@@ -88,11 +89,12 @@ $(function () {
         };
     }
     // Fonction Ajax qui envoie les données de facon asyncrone a la DB
-    function insertDB(value1, value2, value3) {
+    function insertDB(value1, value2, value3, genre) {
         var obj = {
             mot1: value1,
             mot2: value2,
-            mot3: value3
+            mot3: value3,
+            genre: genre
         };
         var URL = '/api/data';
         $.ajax({
@@ -101,7 +103,7 @@ $(function () {
             data: JSON.stringify(obj),
             contentType: "application/json",
             success: function (data) {
-                console.log('ajax call success '+data);
+                console.log('ajax call success!');
             },
             error: function (xhr, text, err) {
                 console.log('error: ', err);

@@ -11,6 +11,7 @@ var Data = new Schema(
         mot1: {type: String, trim: true},
         mot2: {type: String, trim: true},
         mot3: {type: String, trim: true},
+        genre: {type: String},
         date: {type: Date, default: Date.now}
     }
 );
