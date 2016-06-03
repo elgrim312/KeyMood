@@ -1,4 +1,4 @@
-// on appel le fichier database.js
+// on appel le modele database.js
 require('./models/database');
 
 var express = require('express');
