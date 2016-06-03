@@ -9,14 +9,14 @@ block content
                             | Découvre une musique aléatoirement
                             br
                             |  en choisissant :
-                        form
+                        form(action="/player")
                             .formContent
                                 .interfaceLeft
                                     .titre
                                         h3
                                             span 3
                                             |  mots clés
-                                        button.vocal.icon-vocal
+                                        button(type="button")#test.vocal.icon-vocal
                                             a vocal
                                     input#mot1(type='text', name='mot1')
                                     input#mot2(type='text', name='mot2')
