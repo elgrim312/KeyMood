@@ -1,5 +1,5 @@
 // on appel le fichier database.js
-require('./database');
+require('./models/database');
 
 var express = require('express');
 var path = require('path');

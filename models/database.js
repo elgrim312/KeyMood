@@ -8,10 +8,8 @@ var Schema = mongoose.Schema;
 
 var Data = new Schema(
     {
-        mot1: {type: String, trim: true},
-        mot2: {type: String, trim: true},
-        mot3: {type: String, trim: true},
-        genre: {type: String},
+        categorie: {type: String},
+        number: {type: Number},
         date: {type: Date, default: Date.now}
     }
 );
