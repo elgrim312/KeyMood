@@ -78,11 +78,11 @@ $(function () {
                 }).then(function (tracks) {
                     console.log(tracks);
                     // Call Ajax
-                    console.log('genre musical ' + tracks[0].genre);
-                    trim(tracks[0].genre);
-                    var genre = trim(tracks[0].genre);
-                    console.log(genre);
-                    insertDB(words[0], words[1], words[2], genre);
+                    // console.log('genre musical ' + tracks[0].genre);
+                    // trim(tracks[0].genre);
+                    // var genre = trim(tracks[0].genre);
+                    // console.log(genre);
+                    // insertDB(words[0], words[1], words[2], genre);
                     var random = Math.floor(Math.random() * tracks.length);
                     if (tracks.length > 0) {
                         SC.oEmbed(tracks[random].permalink_url, {
