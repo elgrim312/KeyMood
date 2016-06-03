@@ -1,63 +1,55 @@
-doctype html
-html(lang='fr')
-    head
-        meta(charset='UTF-8')
-        title Keymood | Interface
-        link(href='public/css/reset.css', type='text/css', rel='stylesheet')
-        link(href='public/css/fonts.css', type='text/css', rel='stylesheet')
-        link(href='public/css/icomoon.css', type='text/css', rel='stylesheet')
-        link(href='public/css/style.css', type='text/css', rel='stylesheet')
-    body
+extends layout.jade
+block content
         #interface.inner
-            header
-                h1
-                    img(src='public/images/logo.png', alt='Keymood')
-            .content
-                h2
-                    | Découvre une musique aléatoirement
-                    br
-                    |  en choisissant :
-                form
-                    .formContent
-                        .interfaceLeft
-                            .titre
-                                h3
-                                    span 3
-                                    |  mots clés
-                                button.vocal.icon-vocal
-                                    a vocal
-                            input#mot1(type='text', name='mot1')
-                            input#mot2(type='text', name='mot2')
-                            input#mot3(type='text', name='mot3')
-                        p ou
-                        .interfaceRight
-                            .titre
-                                h3
-                                    span 1
-                                    |  genre de musique
-                            ul
-                                li
-                                    input#electro(type='radio', name='categorie', value='electro')
-                                    label.icon-electro(for='electro') Electro
-                                li
-                                    input#jazz(type='radio', name='categorie', value='jazz')
-                                    label.icon-jazz(for='jazz') Jazz
-                                li
-                                    input#metal(type='radio', name='categorie', value='metal')
-                                    label.icon-metal(for='metal') Metal
-                                li
-                                    input#classique(type='radio', name='categorie', value='classique')
-                                    label.icon-classique(for='classique') Classique
-                                li
-                                    input#party(type='radio', name='categorie', value='party')
-                                    label.icon-disco(for='party') Party
-                                li
-                                    input#pop(type='radio', name='categorie', value='pop')
-                                    label.icon-pop(for='pop') Pop
-                                li
-                                    input#rnb(type='radio', name='categorie', value='rnb')
-                                    label.icon-rnb(for='rnb') Rnb
-                                li
-                                    input#rock(type='radio', name='categorie', value='rock')
-                                    label.icon-rock(for='rock') Rock
-                    button.navButton(type='submit') Découvrir
+                    header
+                        h1
+                            img(src='/images/logo.png', alt='Keymood')
+                    .content
+                        h2
+                            | Découvre une musique aléatoirement
+                            br
+                            |  en choisissant :
+                        form
+                            .formContent
+                                .interfaceLeft
+                                    .titre
+                                        h3
+                                            span 3
+                                            |  mots clés
+                                        button.vocal.icon-vocal
+                                            a vocal
+                                    input#mot1(type='text', name='mot1')
+                                    input#mot2(type='text', name='mot2')
+                                    input#mot3(type='text', name='mot3')
+                                p ou
+                                .interfaceRight
+                                    .titre
+                                        h3
+                                            span 1
+                                            |  genre de musique
+                                    ul
+                                        li
+                                            input#electro(type='radio', name='categorie', value='electro')
+                                            label.icon-electro(for='electro') Electro
+                                        li
+                                            input#jazz(type='radio', name='categorie', value='jazz')
+                                            label.icon-jazz(for='jazz') Jazz
+                                        li
+                                            input#metal(type='radio', name='categorie', value='metal')
+                                            label.icon-metal(for='metal') Metal
+                                        li
+                                            input#classique(type='radio', name='categorie', value='classique')
+                                            label.icon-classique(for='classique') Classique
+                                        li
+                                            input#party(type='radio', name='categorie', value='party')
+                                            label.icon-disco(for='party') Party
+                                        li
+                                            input#pop(type='radio', name='categorie', value='pop')
+                                            label.icon-pop(for='pop') Pop
+                                        li
+                                            input#rnb(type='radio', name='categorie', value='rnb')
+                                            label.icon-rnb(for='rnb') Rnb
+                                        li
+                                            input#rock(type='radio', name='categorie', value='rock')
+                                            label.icon-rock(for='rock') Rock
+                            button.navButton(type='submit') Découvrir

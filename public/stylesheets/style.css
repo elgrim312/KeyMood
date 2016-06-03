@@ -1,8 +1,278 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*******GENERAL******/
+html,
+body,
+.inner{
+  height:100%;
+  width: 100%;
+  overflow: hidden;
 }
-
-a {
-  color: #00B7FF;
+.inner{
+  background: url("../images/background.jpg") center center no-repeat;
+  background-size: auto;
+  position: relative;
+  font: 300 24px Hero;
+  letter-spacing: 1px;
+}
+.content{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  width: 100%;
+}
+/******HOME******/
+#home h1>span{
+  display: block;
+  margin: 30px 0 60px;
+  line-height: 0;
+  color: #fff;
+}
+.navButton{
+  background: #00525c;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  line-height: 0;
+  padding: 12px 60px;
+  letter-spacing: 1px;
+  font: 400 20px Raleway;
+  color:#fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.navButton a{
+  padding: 0;
+  color:#fff;
+  text-decoration: none;
+}
+/****INTERFACE****/
+header{
+  padding: 30px 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+header h1>img{
+  width: 192px;
+}
+.content h2,.player h2{
+  text-transform: uppercase;
+  color:#fff;
+  font: 300 30px Hero;
+  margin: 50px 0 80px;
+}
+#interface form {
+  clear: both;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+}
+.interfaceLeft,.interfaceRight,.interfaceLeft+p{
+  float: left;
+}
+#interface .titre{
+  margin-bottom: 30px;
+}
+#interface .navButton{
+  display: block;
+  margin: 100px auto 0;
+}
+.interfaceLeft input[type="text"]{
+  display: block;
+  width: 250px;
+  padding: 15px 0;
+  text-align: center;
+  background: none;
+  border: 1px solid #000;
+  outline: none;
+  font: 300 18px Hero;
+  color: #fff;
+  letter-spacing: 1px;
+  margin: 0 auto;
+}
+.interfaceLeft{
+  width: 430px;
+}
+.interfaceLeft input[type="text"]:nth-child(3){
+  margin: 50px auto;
+}
+.interfaceLeft .titre .vocal,
+.interfaceLeft .titre h3{
+  display: inline-block;
+}
+.interfaceLeft .titre .vocal{
+  border-radius: 25px;
+  border: none;
+  background: #fff;
+  padding: 13px;
+  width: 45px;
+  cursor: pointer;
+  outline:none;
+  margin-left: 15px;
+}
+.interfaceLeft .titre .vocal a{
+  position: absolute;
+  top:-1000000px;
+}
+.interfaceLeft+p {
+  float: left;
+  background: #00525c;
+  padding: 18px 14px;
+  border-radius: 50px;
+  color: #fff;
+  font-family: Raleway;
+  text-transform: uppercase;
+  margin: 160px 90px 0;
+  vertical-align: middle;
+}
+.interfaceRight ul{
+  width: 430px;
+  margin: 0 auto;
+}
+.interfaceRight li {
+  display: inline-block;
+  width: 100px;
+  box-sizing: border-box;
+  padding: 25px 0;
+}
+.formContent{
+  overflow: hidden;
+  clear: both;
+}
+.interfaceRight li label{
+  font: 500 18px Raleway;
+  display: block;
+  position: relative;
+  transition: color 0.5s;
+}
+.interfaceRight li input[type=radio]:not(:checked),
+.interfaceRight li input[type=radio]:checked {
+  position: absolute;
+  top:-1000000px;
+}
+.interfaceRight li input[type=radio]:not(:checked)+label:before,
+.interfaceRight li input[type=radio]:checked+label:before{
+  font-family: icomoon;
+  margin: 0 auto 15px;
+  display: block;
+  font-size: 40px;
+  color: #000;
+  transition: color 0.5s;
+}
+.interfaceRight li input[type=radio]:checked+.icon-rnb:before,
+.interfaceRight li input[type=radio]:not(:checked)+.icon-rnb:before{
+  font-size: 25px;
+}
+.interfaceRight li input[type=radio]:checked+.icon-electro:before,
+.interfaceRight li input[type=radio]:not(:checked)+.icon-electro:before,
+.interfaceRight li input[type=radio]:checked+.icon-jazz:before,
+.interfaceRight li input[type=radio]:not(:checked)+.icon-jazz:before{
+  font-size: 30px;
+}
+.interfaceRight li input[type=radio]:checked+label:before,
+.interfaceRight li input[type=radio]:checked+label{
+  color: #fff;
+  transition: color 0.5s;
+}
+.interfaceRight .titre h3,.interfaceLeft .titre h3{
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.interfaceRight .titre h3 span,.interfaceLeft .titre h3 span{
+  font-size: 60px;
+}
+/****PLAYER****/
+header  h1{
+  display: inline-block;
+}
+header .filters{
+  display: inline-block;
+  float: right;
+}
+header .filters li{
+  color: #fff;
+  font: 400 18px Raleway;
+}
+header .filters li:before{
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-family: icomoon;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+#player .partLeft{
+  width: 45%;
+  float: left;
+  margin: 70px 0 40px;
+}
+#player .partRight{
+  width: 55%;
+  float: left;
+  margin: 20px 0 0;
+}
+#player h2{
+  text-align: left;
+}
+#player .partLeft>div{
+  background: #fff;
+  width:400px;
+  height:485px;
+  margin: 0 auto;
+}
+#player .content>a,
+#player li.more>a{
+  text-decoration: underline;
+  font-size: 14px;
+  cursor: pointer;
+  font-family : Raleway;
+}
+#player .content>a{
+  margin-top: 25px;
+  display: block;
+}
+#player .Oneconcert{
+  padding: 20px 0;
+  border-bottom: 1px solid #000;
+  max-width: 590px;
+}
+#player .Oneconcert li{
+  display: inline-block;
+  font-family : Raleway;
+  font-size: 21px;
+  margin-left: 50px;
+}
+#player .Oneconcert li:first-child{
+  margin-left: 0;
+}
+#player li.date{
+  max-width: 150px;
+}
+#player li.date span{
+  display: block;
+  font-size: 27px;
+  font-weight:500;
+}
+#player li.place span{
+  display: block;
+}
+#player li.place{
+  text-align: left;
+  font-size: 15px;
+  max-width: 250px;
+  text-transform: uppercase;
+}
+#player .navButton{
+  clear: both;
+}
+/*****STATISTIQUES*****/
+#statistiques .navButton{
+  padding:18px 40px;
+}
+#statistiques .stats{
+  width: 300px;
+  height:300px;
+  background: #fff;
+  margin : 0 auto 60px;
 }

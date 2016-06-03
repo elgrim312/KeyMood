@@ -1,17 +1,11 @@
-doctype html
-html(lang='fr')
-    head
-        meta(charset='UTF-8')
-        title Keymood | Accueil
-        link(href='public/css/reset.css', type='text/css', rel='stylesheet')
-        link(href='public/css/fonts.css', type='text/css', rel='stylesheet')
-        link(href='public/css/icomoon.css', type='text/css', rel='stylesheet')
-        link(href='public/css/style.css', type='text/css', rel='stylesheet')
-    body
-        #home.inner
-            .content
-                h1
-                    img(src='public/images/logo.png', alt='Keymood')
-                    span La musique qui vous baladera de son en son
-                button.navButton
-                    a(href='interface.html') Commencer
+extends layout.jade
+block content
+            #home.inner
+                .content
+                    h1
+                        img(src='images/logo.png', alt='Keymood')
+                        span La musique qui vous baladera de son en son
+                    button.navButton
+                        a(href='/interface') Commencer
+
+
