@@ -5,5 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('landing', { title: 'Projet JS' });
 });
+router.get('/interface', function (req, res, next ) {
+    res.render('interface', {title: 'interface'})
+})
 
 module.exports = router;

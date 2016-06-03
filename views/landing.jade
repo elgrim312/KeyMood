@@ -1,17 +1,23 @@
 doctype html
-html(lang='fr')
+html
     head
-        meta(charset='UTF-8')
-        title Keymood | Accueil
-        link(href='public/css/reset.css', type='text/css', rel='stylesheet')
-        link(href='public/css/fonts.css', type='text/css', rel='stylesheet')
-        link(href='public/css/icomoon.css', type='text/css', rel='stylesheet')
-        link(href='public/css/style.css', type='text/css', rel='stylesheet')
+        title hello
+        link(href='stylesheets/reset.css', type='text/css', rel='stylesheet')
+        link(href='stylesheets/fonts.css', type='text/css', rel='stylesheet')
+        link(href='stylesheets/icomoon.css', type='text/css', rel='stylesheet')
+        link(href='stylesheets/style.css', type='text/css', rel='stylesheet')
+        script(type="text/javascript", src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+        script(type="text/javascript", src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js")
+        script(type="text/javascript", src="http://code.responsivevoice.org/responsivevoice.js")
+        script(type="text/javascript", src="/javascripts/main.js")
     body
-        #home.inner
-            .content
-                h1
-                    img(src='public/images/logo.png', alt='Keymood')
-                    span La musique qui vous baladera de son en son
-                button.navButton
-                    a(href='interface.html') Commencer
+        block content
+            #home.inner
+                .content
+                    h1
+                        img(src='images/logo.png', alt='Keymood')
+                        span La musique qui vous baladera de son en son
+                    button.navButton
+                        a(href='/interface') Commencer
+
+
