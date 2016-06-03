@@ -3,12 +3,12 @@ html(lang='fr')
     head
         meta(charset='UTF-8')
         title Keymood | Statistiques
-        link(href='public/css/reset.css', type='text/css', rel='stylesheet')
-        link(href='public/css/fonts.css', type='text/css', rel='stylesheet')
-        link(href='public/css/icomoon.css', type='text/css', rel='stylesheet')
-        link(href='public/css/style.css', type='text/css', rel='stylesheet')
+        link(href='/stylesheets/reset.css', type='text/css', rel='stylesheet')
+        link(href='/stylesheets/fonts.css', type='text/css', rel='stylesheet')
+        link(href='/stylesheets/icomoon.css', type='text/css', rel='stylesheet')
+        link(href='/stylesheets/style.css', type='text/css', rel='stylesheet')
         style.
-            #statistiques h2 span{
+            #statistiques h2 span {
                 display: block;
                 font-weight: 700;
                 margin-bottom: 20px;
@@ -17,11 +17,53 @@ html(lang='fr')
         #statistiques.inner
             header
                 h1
-                    img(src='public/images/logo.png', alt='Keymood')
+                    img(src='/images/logo.png', alt='Keymood')
             .content
                 h2
                     span Statistiques
                     | Les genres de musique les plus demandés
-                .stats
+                #chart
+                    canvas#myChart(width='300' height='300')
                 button.navButton
-                    a(href='interface.html') Rechercher une musique
+                    a(href='/interface') Rechercher une musique
+        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js")
+        script(type='text/javascript').
+            var ctx = document.getElementById("myChart");
+            var array = [#{datas[0].number}, #{datas[1].number}, #{datas[2].number}, #{datas[3].number}, #{datas[4].number}];
+            var myDoughnutChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        "Metal",
+                        "Pop",
+                        "Jazz",
+                        "Electro",
+                        "Party"
+                    ],
+                    datasets: [
+                        {
+                            data: array,
+                            backgroundColor: [
+                                "#E0E0E0",
+                                "#7986CB",
+                                "#FFD54F",
+                                "#A1887F",
+                                "#E57373",
+                                "#AED581",
+                                "#64B5F6",
+                                "#FFB74D"
+                            ],
+                            hoverBackgroundColor: [
+                                "#E0E0E0",
+                                "#7986CB",
+                                "#FFD54F",
+                                "#A1887F",
+                                "#E57373",
+                                "#AED581",
+                                "#64B5F6",
+                                "#FFB74D"
+                            ]
+                        }]
+                }
+            });
+
