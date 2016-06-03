@@ -276,3 +276,8 @@ header .filters li:before{
   background: #fff;
   margin : 0 auto 60px;
 }
+#chart{
+  display: block;
+  width: 25%;
+  margin: auto;
+}

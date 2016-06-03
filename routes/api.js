@@ -13,8 +13,8 @@ router.get('/data', function (req, res) {
             res.json({'ERROR': err});
         } else {
             res.render(
-                'api',
-                {title: 'Data', datas: datas}
+                'stat',
+                {datas: datas}
             );
         }
     });
