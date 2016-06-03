@@ -9,8 +9,8 @@ var Schema = mongoose.Schema;
 var Data = new Schema(
     {
         categorie: {type: String},
-        number: {type: Number},
-        date: {type: Date, default: Date.now}
+        number: {type: Number}
+        //date: {type: Date, default: Date.now}
     }
 );
 
