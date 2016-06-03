@@ -12,7 +12,7 @@ router.get('/interface', function (req, res, next ) {
 router.get('/player', function (req, res, next ) {
     res.render('player', {title: 'Keymood | Player'})
 });
-router.get('/interface', function (req, res, next ) {
+router.get('/stat', function (req, res, next ) {
     res.render('stat', {title: 'Keymood | Statistiques'})
 });
 
