@@ -7,6 +7,6 @@ router.get('/', function(req, res, next) {
 });
 router.get('/interface', function (req, res, next ) {
     res.render('interface', {title: 'interface'})
-})
+});
 
 module.exports = router;
