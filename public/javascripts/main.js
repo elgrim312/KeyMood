@@ -29,6 +29,9 @@ $(function () {
                             console.log(tab[j]);
                         }
                     }
+                    // recognition.onend = function () {
+                    //     $('.navButton').click();
+                    // }
                 }
             }
         };
