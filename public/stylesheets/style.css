@@ -41,6 +41,8 @@ a,input,button,label,label:before{
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
+  -ms-transform:translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
 }
@@ -206,6 +208,20 @@ header h1 img{
 .interfaceRight li input[type=radio]:checked+label{
   color: #fff;
   transition: color 0.5s;
+  animation: animationFrames linear 1s infinite;
+  -webkit-animation:animationFrames linear 1s infinite;
+  -moz-animation:animationFrames linear 1s infinite;
+  -o-animation:animationFrames linear 1s infinite;
+  transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+@-webkit-keyframes animationFrames{
+  0% {  transform:  translate(0px,0px)  rotate(0deg) ;  }
+  25% {  transform:  translate(-2px,0px)  rotate(-2deg) ;  }
+  50% {  transform:  translate(0px,0px)  rotate(0deg) ;  }
+  75% {  transform:  translate(-2px,0px)  rotate(-2deg) ;  }
+  100% {  transform:  translate(0px,0px)  rotate(0deg) ;  }
 }
 .interfaceRight .titre h3,.interfaceLeft .titre h3{
   font-size: 24px;
@@ -218,6 +234,8 @@ header h1 img{
   display: none;
   position: absolute;
   transform: translate(-50%,-50%);
+  -ms-transform:translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   top: 50%;
   background: rgba(255,255,255,0.9);
   left: 50%;
@@ -332,6 +350,10 @@ header .filters li:before{
   clear: both;
 }
 /*****STATISTIQUES*****/
+#statistiques{
+  background: url("../images/background2.jpg") center center no-repeat;
+  background-size: auto;
+}
 #statistiques .navButton{
   padding:18px 40px;
 }

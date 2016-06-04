@@ -43,39 +43,45 @@ $(document).ready(function(){
         $(document).on({
             mouseenter: function () {
                 if(!alert) {
-                    var actual = '.interfaceRight';
-                    var other = '.interfaceLeft';
-                    var inputValue = 'text';
-                    if ($(this).hasClass('inputsText')) {
-                        actual = '.interfaceLeft';
-                        other = '.interfaceRight';
-                        inputValue = 'radio';
-                    }
-                    if ($(actual).hasClass('disabled') && input == inputValue) {
-                        $(actual).removeClass('disabled');
-                        $(other).addClass('disabled')
+                    if ($('.interfaceRight').hasClass('disabled') && input == 'text') {
+                        $('.interfaceRight').removeClass('disabled');
+                        $('.interfaceLeft').addClass('disabled')
                     } else if (input == '') {
-                        $(other).addClass('disabled')
+                        $('.interfaceLeft').addClass('disabled')
                     }
                 }
             },
             mouseleave: function () {
                 if(!alert) {
-                    var actual = '.interfaceRight';
-                    var other = '.interfaceLeft';
-                    var inputValue = 'text';
-                    if ($(this).hasClass('inputsText')) {
-                        actual = '.interfaceLeft';
-                        other = '.interfaceRight';
-                        inputValue = 'radio';
-                    }
-                    if ($(actual).hasClass('disabled') && input == inputValue) {
-                        $(actual).addClass('disabled');
-                        $(other).removeClass('disabled')
+                    if (!$('.interfaceRight').hasClass('disabled') && input == 'text') {
+                        $('.interfaceRight').addClass('disabled');
+                        $('.interfaceLeft').removeClass('disabled')
                     } else if (input == '') {
-                        $(other).removeClass('disabled')
+                        $('.interfaceLeft').removeClass('disabled')
                     }
                 }
             }
-        }, '.interfaceRight>ul,.inputsText');
+        }, '.interfaceRight>ul');
+    $(document).on({
+        mouseenter: function () {
+            if(!alert) {
+                if ($('.interfaceLeft').hasClass('disabled') && input == 'radio') {
+                    $('.interfaceLeft').removeClass('disabled');
+                    $('.interfaceRight').addClass('disabled')
+                } else if (input == '') {
+                    $('.interfaceRight').addClass('disabled')
+                }
+            }
+        },
+        mouseleave: function () {
+            if(!alert) {
+                if (!$('.interfaceLeft').hasClass('disabled') && input == 'radio') {
+                    $('.interfaceLeft').addClass('disabled');
+                    $('.interfaceRight').removeClass('disabled')
+                } else if (input == '') {
+                    $('.interfaceRight').removeClass('disabled')
+                }
+            }
+        }
+    }, '.inputsText');
 });

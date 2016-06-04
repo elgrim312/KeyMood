@@ -1,86 +1,98 @@
-extends layout.jade
-block content
-        #statistiques
-            header
-                h1
-                    a(href="/"): img(src='/images/logo.png', alt='Keymood')
-            .content
-                h2
-                    span Statistiques
-                    | Les genres de musique les plus demandés
-                .contentStat
-                    ul.statsLeft
-                       li
-                            i.icon-classique
-                            p.classique Classique
-                       li
-                            i.icon-electro
-                            p.electro Electro
-                       li
-                            i.icon-jazz
-                            p.jazz Jazz
-                       li
-                            i.icon-metal
-                            p.metal Metal
-                    .stats
-                        canvas#myChart(width='300' height='300')
-                    ul.statsRight
-                        li
-                            i.icon-pop
-                            p.pop Pop
-                        li
-                            i.icon-rnb
-                            p.rnb Rnb
-                        li
-                            i.icon-disco
-                            p.disco Disco
-                        li
-                            i.icon-rock
-                            p.rock Rock
-                button.navButton
-                    a(href='/interface') Rechercher une musique
-        script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js")
-        script(type='text/javascript').
-            var ctx = document.getElementById("myChart");
-            var array = [#{datas[0].number}, #{datas[1].number}, #{datas[2].number}, #{datas[3].number}, #{datas[4].number}];
-            var myDoughnutChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: [
-                        "Metal",
-                        "Pop",
-                        "Jazz",
-                        "Electro",
-                        "Disco"
-                        ],
-                    datasets: [
-                        {
-                            data: array,
-                            backgroundColor: [
-                                "#E0E0E0",
-                                "#7986CB",
-                                "#FFD54F",
-                                "#A1887F",
-                                "#E57373",
-                                "#AED581",
-                                "#64B5F6",
-                                "#FFB74D"
-                                ],
-                            hoverBackgroundColor: [
-                                "#E0E0E0",
-                                "#7986CB",
-                                "#FFD54F",
-                                "#A1887F",
-                                "#E57373",
-                                "#AED581",
-                                "#64B5F6",
-                                "#FFB74D"
-                                ],
-                            borderWidth : 0
-                            }
-                        ]
-                    },
-                    options :{
-                    legend : false
-                    }
-                });
+doctype html
+html.nojQuery
+  head
+    title= title
+    meta(charset='UTF-8')
+    script(type="text/javascript", src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+    script(type="text/javascript", src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js")
+    script(type="text/javascript", src="/javascripts/main.js")
+    script(type="text/javascript", src="/javascripts/player.js")
+    link(href='/stylesheets/reset.css', type='text/css', rel='stylesheet')
+    link(href='/stylesheets/fonts.css', type='text/css', rel='stylesheet')
+    link(href='/stylesheets/icomoon.css', type='text/css', rel='stylesheet')
+    link(href='/stylesheets/style.css', type='text/css', rel='stylesheet')
+  body
+    .inner#statistiques
+        header
+            h1
+                a(href="/"): img(src='/images/logo.png', alt='Keymood')
+        .content
+            h2
+                span Statistiques
+                | Les genres de musique les plus demandés
+            .contentStat
+                ul.statsLeft
+                   li
+                        i.icon-classique
+                        p.classique Classique
+                   li
+                        i.icon-electro
+                        p.electro Electro
+                   li
+                        i.icon-jazz
+                        p.jazz Jazz
+                   li
+                        i.icon-metal
+                        p.metal Metal
+                .stats
+                    canvas#myChart(width='300' height='300')
+                ul.statsRight
+                    li
+                        i.icon-pop
+                        p.pop Pop
+                    li
+                        i.icon-rnb
+                        p.rnb Rnb
+                    li
+                        i.icon-disco
+                        p.disco Disco
+                    li
+                        i.icon-rock
+                        p.rock Rock
+            button.navButton
+                a(href='/interface') Rechercher une musique
+    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js")
+    script(type='text/javascript').
+        var ctx = document.getElementById("myChart");
+        var array = [#{datas[0].number}, #{datas[1].number}, #{datas[2].number}, #{datas[3].number}, #{datas[4].number}];
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    "Metal",
+                    "Pop",
+                    "Jazz",
+                    "Electro",
+                    "Disco"
+                    ],
+                datasets: [
+                    {
+                        data: array,
+                        backgroundColor: [
+                            "#E0E0E0",
+                            "#7986CB",
+                            "#FFD54F",
+                            "#A1887F",
+                            "#E57373",
+                            "#AED581",
+                            "#64B5F6",
+                            "#FFB74D"
+                            ],
+                        hoverBackgroundColor: [
+                            "#E0E0E0",
+                            "#7986CB",
+                            "#FFD54F",
+                            "#A1887F",
+                            "#E57373",
+                            "#AED581",
+                            "#64B5F6",
+                            "#FFB74D"
+                            ],
+                        borderWidth : 0
+                        }
+                    ]
+                },
+                options :{
+                legend : false
+                }
+            });
