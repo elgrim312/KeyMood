@@ -12,7 +12,7 @@ var mot1 =$.urlParam('mot1'); // name
 var mot2 =$.urlParam('mot2'); // name
 var mot3 =$.urlParam('mot3'); // name
 var tab = [mot1, mot2, mot3];
-console.log(tab)
+console.log(tab);
 var random_Tab = Math.floor(Math.random() * tab.length);
 // prend un mot dans l'index
 var result_Finale = tab[random_Tab];
@@ -30,9 +30,11 @@ if (result_Finale != undefined) {
         console.log(tracks.length);
         var random = Math.floor(Math.random() * tracks.length);
         if (tracks.length > 0) {
-            console.log("ok");
-            SC.oEmbed(tracks[random].permalink_url, {
-                element: document.getElementById('putTheWidgetHere')
+            var url = tracks[random].permalink_url;
+            SC.oEmbed(url, {
+                element: document.getElementById('putTheWidgetHere'),
+                auto_play: true,
+                show_comments : false
             });
             // si les mots rechercher return un  tableau vide alors affiche ...
         } else {
@@ -40,3 +42,4 @@ if (result_Finale != undefined) {
         }
     });
 }
+// si les mots rechercher return un
