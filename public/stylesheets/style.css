@@ -282,6 +282,9 @@ header .filters li:before{
   font-size: 30px;
   margin-bottom: 10px;
 }
+#player,#interface,#home,#statistiques{
+  display:none;
+}
 #player .partLeft{
   width: 45%;
   float: left;
@@ -350,9 +353,9 @@ header .filters li:before{
   clear: both;
 }
 /*****STATISTIQUES*****/
-#statistiques{
-  background: url("../images/background2.jpg") center center no-repeat;
-  background-size: auto;
+#stats{
+  background : url("../images/background2.jpg") center center no-repeat;
+  background-size : auto;
 }
 #statistiques .navButton{
   padding:18px 40px;
