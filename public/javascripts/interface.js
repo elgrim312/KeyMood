@@ -13,6 +13,9 @@ $(document).ready(function(){
             $('input[type="radio"],input[type="text"]').attr('disabled',true)
         }
     });
+    $('#test').click(function(){
+        input = 'audio';
+    });
     $('.exitAlert').click(function(){
             alert = false;
             $('.alert').fadeOut(200);
