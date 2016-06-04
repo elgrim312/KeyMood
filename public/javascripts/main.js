@@ -13,10 +13,8 @@ $(function () {
         });
         // Récuperation des mots
         recognition.onresult = function (event) {
-            $('#result').text('');
             for (var i = event.resultIndex; i < event.results.length; ++i) {
                 if (event.results[i].isFinal) {
-
                     recognition.stop();
                     var transcript = event.results[i][0].transcript;
                     var inputs = document.querySelectorAll('input');
@@ -28,10 +26,8 @@ $(function () {
                         if (words[j] != undefined) {
                             inputs[j].value = words[j];
                             tab[j] = words[j];
+                            console.log(tab[j]);
                         }
-                    }
-                    recognition.onend = function () {
-                        $('.navButton').click();
                     }
                 }
             }
