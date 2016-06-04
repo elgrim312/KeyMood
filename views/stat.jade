@@ -1,29 +1,42 @@
-doctype html
-html(lang='fr')
-    head
-        meta(charset='UTF-8')
-        title Keymood | Statistiques
-        link(href='/stylesheets/reset.css', type='text/css', rel='stylesheet')
-        link(href='/stylesheets/fonts.css', type='text/css', rel='stylesheet')
-        link(href='/stylesheets/icomoon.css', type='text/css', rel='stylesheet')
-        link(href='/stylesheets/style.css', type='text/css', rel='stylesheet')
-        style.
-            #statistiques h2 span {
-                display: block;
-                font-weight: 700;
-                margin-bottom: 20px;
-            }
-    body
-        #statistiques.inner
+extends layout.jade
+block content
+        #statistiques
             header
                 h1
-                    img(src='/images/logo.png', alt='Keymood')
+                    a(href="/"): img(src='/images/logo.png', alt='Keymood')
             .content
                 h2
                     span Statistiques
                     | Les genres de musique les plus demandés
-                #chart
-                    canvas#myChart(width='300' height='300')
+                .contentStat
+                    ul.statsLeft
+                       li
+                            i.icon-classique
+                            p.classique Classique
+                       li
+                            i.icon-electro
+                            p.electro Electro
+                       li
+                            i.icon-jazz
+                            p.jazz Jazz
+                       li
+                            i.icon-metal
+                            p.metal Metal
+                    .stats
+                        canvas#myChart(width='300' height='300')
+                    ul.statsRight
+                        li
+                            i.icon-pop
+                            p.pop Pop
+                        li
+                            i.icon-rnb
+                            p.rnb Rnb
+                        li
+                            i.icon-disco
+                            p.disco Disco
+                        li
+                            i.icon-rock
+                            p.rock Rock
                 button.navButton
                     a(href='/interface') Rechercher une musique
         script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js")
@@ -38,8 +51,8 @@ html(lang='fr')
                         "Pop",
                         "Jazz",
                         "Electro",
-                        "Party"
-                    ],
+                        "Disco"
+                        ],
                     datasets: [
                         {
                             data: array,
@@ -52,7 +65,7 @@ html(lang='fr')
                                 "#AED581",
                                 "#64B5F6",
                                 "#FFB74D"
-                            ],
+                                ],
                             hoverBackgroundColor: [
                                 "#E0E0E0",
                                 "#7986CB",
@@ -62,8 +75,12 @@ html(lang='fr')
                                 "#AED581",
                                 "#64B5F6",
                                 "#FFB74D"
-                            ]
-                        }
-                    ]
-                }
-            });
+                                ],
+                            borderWidth : 0
+                            }
+                        ]
+                    },
+                    options :{
+                    legend : false
+                    }
+                });

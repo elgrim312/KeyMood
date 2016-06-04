@@ -1,5 +1,5 @@
 doctype html
-html
+html.nojQuery
   head
     title= title
     meta(charset='UTF-8')
@@ -12,5 +12,9 @@ html
     link(href='/stylesheets/icomoon.css', type='text/css', rel='stylesheet')
     link(href='/stylesheets/style.css', type='text/css', rel='stylesheet')
   body
-    block content
+    .inner
+        block content
+    canvas
+    if title != 'Stats'
+    script(type="text/javascript", src="/javascripts/canvas.js")
 

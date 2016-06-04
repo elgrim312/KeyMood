@@ -1,14 +1,17 @@
 extends layout.jade
 block content
-        #interface.inner
+        #interface
                     header
                         h1
-                            img(src='/images/logo.png', alt='Keymood')
+                            a(href="/"): img(src='/images/logo.png', alt='Keymood')
                     .content
                         h2
                             | Découvre une musique aléatoirement
                             br
                             |  en choisissant :
+                        .alert
+                            p Veuillez choisir au moins un mot ou une categorie
+                            button.exitAlert X
                         form(action="/player")
                             .formContent
                                 .interfaceLeft
@@ -18,9 +21,10 @@ block content
                                             |  mots clés
                                         button(type="button")#test.vocal.icon-vocal
                                             a vocal
-                                    input#mot1(type='text', name='mot1')
-                                    input#mot2(type='text', name='mot2')
-                                    input#mot3(type='text', name='mot3')
+                                    .inputsText
+                                        input#mot1(type='text', name='mot1')
+                                        input#mot2(type='text', name='mot2')
+                                        input#mot3(type='text', name='mot3')
                                 p ou
                                 .interfaceRight
                                     .titre
@@ -41,8 +45,8 @@ block content
                                             input#classique(type='radio', name='categorie', value='classique')
                                             label.icon-classique(for='classique') Classique
                                         li
-                                            input#party(type='radio', name='categorie', value='party')
-                                            label.icon-disco(for='party') Party
+                                            input#disco(type='radio', name='categorie', value='disco')
+                                            label.icon-disco(for='disco') disco
                                         li
                                             input#pop(type='radio', name='categorie', value='pop')
                                             label.icon-pop(for='pop') Pop
@@ -53,3 +57,4 @@ block content
                                             input#rock(type='radio', name='categorie', value='rock')
                                             label.icon-rock(for='rock') Rock
                             button.navButton(type='submit') Découvrir
+        script(type="text/javascript" src="/javascripts/interface.js")
