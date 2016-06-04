@@ -10,6 +10,6 @@ router.get('/interface', function (req, res, next ) {
     res.render('interface', {title: 'Keymood | Interface'})
 });
 router.get('/player', function (req, res, next ) {
-    res.render('player', {title: 'Keymood | Player'}, concerts)
+    res.render('player', {title: 'Keymood | Player'})
 });
 module.exports = router;
