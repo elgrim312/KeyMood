@@ -33,33 +33,33 @@ block content
                                             |  genre de musique
                                     ul
                                         li
-                                            input#electro(type='radio', name='categorie', value='57504a36fdca16c6c7626b15')
+                                            input#electro(type='radio', name='categorie', value='electro' data-id='57504a36fdca16c6c7626b15')
                                             label.icon-electro(for='electro') Electro
                                         li
-                                            input#jazz(type='radio', name='categorie', value='57504a22fdca16c6c7626b14')
+                                            input#jazz(type='radio', name='categorie', value='jazz',data-id='57504a22fdca16c6c7626b14')
                                             label.icon-jazz(for='jazz') Jazz
                                         li
-                                            input#metal(type='radio', name='categorie', value='575010c052ed968ebd1f0728')
+                                            input#metal(type='radio', name='categorie', value='metal',data-id='575010c052ed968ebd1f0728')
                                             label.icon-metal(for='metal') Metal
                                         li
-                                            input#classique(type='radio', name='categorie', value='5753ee2f61e1a49252ba59f7')
+                                            input#classique(type='radio', name='categorie', value='classique',data-id='5753ee2f61e1a49252ba59f7')
                                             label.icon-classique(for='classique') Classique
                                         li
-                                            input#disco(type='radio', name='categorie', value='57504a90fdca16c6c7626b16')
+                                            input#disco(type='radio', name='categorie', value='disco',data-id='57504a90fdca16c6c7626b16')
                                             label.icon-disco(for='disco') disco
                                         li
-                                            input#pop(type='radio', name='categorie', value='57504a13fdca16c6c7626b13')
+                                            input#pop(type='radio', name='categorie', value='pop',data-id='57504a13fdca16c6c7626b13')
                                             label.icon-pop(for='pop') Pop
                                         li
-                                            input#rnb(type='radio', name='categorie', value='5753ee3361e1a49252ba59f8')
+                                            input#rnb(type='radio', name='categorie', value='rnb',data-id='5753ee3361e1a49252ba59f8')
                                             label.icon-rnb(for='rnb') Rnb
                                         li
-                                            input#rock(type='radio', name='categorie', value='5753ee1c61e1a49252ba59f6')
+                                            input#rock(type='radio', name='categorie', value='rock',data-id='5753ee1c61e1a49252ba59f6')
                                             label.icon-rock(for='rock') Rock
                             button.navButton(type='submit') Découvrir
         script(type="text/javascript" src="/javascripts/interface.js")
         script(src="/javascripts/ajax.js")
         script.
             $(function () {
-                $('ul li').click(incrementData);
+                $('ul li label').click(incrementData);
             });
