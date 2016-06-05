@@ -9,7 +9,7 @@ var Schema = mongoose.Schema;
 var Data = new Schema(
     {
         categorie: {type: String},
-        number: {type: Number}
+        number: {type: Number, default: 0}
         //date: {type: Date, default: Date.now}
     }
 );
