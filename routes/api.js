@@ -20,7 +20,7 @@ router.get('/data', function (req, res) {
 });
 
 //Incrementation des Champs
-router.get('/up/:id', function (req, res) {
+router.put('/up/:id', function (req, res) {
     var id = req.params.id;
     Data.findByIdAndUpdate(id, {$inc: {number: 1}}, function (err, action) {
         if (err) return handleError(err);
