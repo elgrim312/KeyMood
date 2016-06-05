@@ -20,13 +20,11 @@ router.get('/data', function (req, res) {
 });
 
 //Incrementation des Champs
-router.get('/upmetal', function (req, res) {
-    //@todo refaire en dynamique
-    var id ="575010c052ed968ebd1f0728";
-    Data.findByIdAndUpdate(id, { $inc: { number: 1 }}, function (err, action) {
+router.get('/up/:id', function (req, res) {
+    var id = req.params.id;
+    Data.findByIdAndUpdate(id, {$inc: {number: 1}}, function (err, action) {
         if (err) return handleError(err);
         console.log(action);
-        res.redirect('/api/data');
     });
 });
 
