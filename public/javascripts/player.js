@@ -42,4 +42,3 @@ if (result_Finale != undefined) {
         }
     });
 }
-// si les mots rechercher return un

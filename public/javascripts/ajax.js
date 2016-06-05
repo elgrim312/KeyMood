@@ -1,7 +1,7 @@
 /**
  * Created by constantin on 05/06/2016.
  */
-// Fonction Ajax qui incremente les données en fonction du clic
+// Fonction Ajax qui incremente les données au clic
 function incrementData() {
     var id = $(this).prev('input').data('id');
     console.log(id);
