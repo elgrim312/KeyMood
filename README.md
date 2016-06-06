@@ -3,7 +3,7 @@
 -----------------------------------------
  1. lancer mongo ```mongod```
  2. allez dans le terminal
- 3. taper ```mongo``
+ 3. taper ``mongo``
  4. taper ```use data```
  5. allez  à la racine du  projet 
  6. taper " mongoimport --db data --collection datas --file datas.json"
