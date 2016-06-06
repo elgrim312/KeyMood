@@ -32,6 +32,6 @@
 9. charts.js
 
 ### Usage
-
+------------------------
 Pour les Tests Utiliser [Mocha] (https://mochajs.org/)  
 ``$ mocha``
