@@ -15,8 +15,8 @@
  
 ### Démarage
 ----------------------------
-```$ npm install```  
-```$ npm start```  
+1. ```$ npm install```  
+2. ```$ npm start```  
 [http://localhost:3001/] (http://localhost:3001/) :feelsgood:  
 
 ### La liste des Dépendances
