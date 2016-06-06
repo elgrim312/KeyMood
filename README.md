@@ -1,4 +1,4 @@
-# Projet JavaScript n°2
+# Projet KeyMood 
 ### Instalation de la base de donée
 -----------------------------------------
  1. lancer mongo ```mongod```
