@@ -9,7 +9,7 @@
  6. taper " mongoimport --db data --collection datas --file datas.json"
  7. retour si c'est ok  
   `
-  2016-06-03T17:09:52.951+0200    connected to: localhost`
+  2016-06-03T17:09:52.951+0200    connected to: localhost`  
    `2016-06-03T17:09:53.005+0200    imported 5 documents
  `
  
