@@ -1,5 +1,6 @@
 # Projet JavaScript n°2
 ### Instalation de la base de donée
+-----------------------------------------
  1. lancer mongo ```mongod```
  2. allez dans le terminal
  3. taper ```mongo``
@@ -13,12 +14,13 @@
  `
  
 ### Démarage
+----------------------------
 ```$ npm install```  
 ```$ npm start```  
 [http://localhost:3001/] (http://localhost:3001/) :feelsgood:  
 
 ### La liste des Dépendances
-
+---------------------------------
 1. NodeJs
 2. MongoDB
 3. Express 
