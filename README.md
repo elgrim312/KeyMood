@@ -1,7 +1,7 @@
 # Projet KeyMood 
 ## Prélude
  Bonjour et bien venus sur Keymood avant  de suivrel'instalation possible vous devez disposer de quelque technologie
- sur votre machine **comme**  
+ sur votre machine **comme**:  
     1. npm ( min v 3.8.9)  
     2. node js ( min v 6.2.0)  
     3. mongo ( min v 3.2.6)  
