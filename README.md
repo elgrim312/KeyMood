@@ -28,7 +28,7 @@
 7. Mongoose
 8. Mocha/Chai
 9. charts.js
-------------------------------------------------------------------------
+
 ### Usage
 
 Pour les Tests Utiliser [Mocha] (https://mochajs.org/)  
