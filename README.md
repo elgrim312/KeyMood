@@ -16,10 +16,9 @@
  4. Allez  à la racine du  projet 
  5. ```$ mongoimport --db data --collection datas --file datas.json```
  6. output si tout a bien marché  
-  ```
-  2016-06-03T17:09:52.951+0200    connected to: localhost  
-  2016-06-03T17:09:53.005+0200    imported 5 documents
- ```
+  ```2016-06-03T17:09:52.951+0200    connected to: localhost```   
+  ```2016-06-03T17:09:53.005+0200    imported 5 documents```
+ 
  
 ### Démarage
 ----------------------------
