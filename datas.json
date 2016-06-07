@@ -1,8 +1,8 @@
-{"_id":{"$oid":"575010c052ed968ebd1f0728"},"categorie":"metal","date":{"$date":"2016-06-02T10:56:00.722Z"},"number":27,"__v":0}
-{"_id":{"$oid":"57504a13fdca16c6c7626b13"},"categorie":"pop","date":{"$date":"2016-06-02T15:00:35.824Z"},"number":6,"__v":0}
-{"_id":{"$oid":"57504a22fdca16c6c7626b14"},"categorie":"jazz","date":{"$date":"2016-06-02T15:00:50.587Z"},"number":13,"__v":0}
-{"_id":{"$oid":"57504a36fdca16c6c7626b15"},"categorie":"electro","date":{"$date":"2016-06-02T15:01:10.374Z"},"number":23,"__v":0}
-{"_id":{"$oid":"57504a90fdca16c6c7626b16"},"categorie":"party","date":{"$date":"2016-06-02T15:02:40.699Z"},"number":7,"__v":0}
-{"_id":{"$oid":"5753ee1c61e1a49252ba59f6"},"categorie":"rock","number":8,"__v":0}
-{"_id":{"$oid":"5753ee2f61e1a49252ba59f7"},"categorie":"classique","number":8,"__v":0}
-{"_id":{"$oid":"5753ee3361e1a49252ba59f8"},"categorie":"rnb","number":13,"__v":0}
+{"_id":{"$oid":"575010c052ed968ebd1f0728"},"categorie":"metal","date":{"$date":"2016-06-02T10:56:00.722Z"},"number":14,"__v":0}
+{"_id":{"$oid":"57504a13fdca16c6c7626b13"},"categorie":"pop","date":{"$date":"2016-06-02T15:00:35.824Z"},"number":2,"__v":0}
+{"_id":{"$oid":"57504a22fdca16c6c7626b14"},"categorie":"jazz","date":{"$date":"2016-06-02T15:00:50.587Z"},"number":2,"__v":0}
+{"_id":{"$oid":"57504a36fdca16c6c7626b15"},"categorie":"electro","date":{"$date":"2016-06-02T15:01:10.374Z"},"number":4,"__v":0}
+{"_id":{"$oid":"57504a90fdca16c6c7626b16"},"categorie":"disco","date":{"$date":"2016-06-02T15:02:40.699Z"},"number":1,"__v":0}
+{"_id":{"$oid":"57504a90fdca16c6c7626b17"},"categorie":"classique","date":{"$date":"2016-06-02T15:02:40.699Z"},"number":1,"__v":0}
+{"_id":{"$oid":"57504a90fdca16c6c7626b18"},"categorie":"rnb","date":{"$date":"2016-06-02T15:02:40.699Z"},"number":1,"__v":0}
+{"_id":{"$oid":"57504a90fdca16c6c7626b19"},"categorie":"rock","date":{"$date":"2016-06-02T15:02:40.699Z"},"number":1,"__v":0}
