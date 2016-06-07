@@ -1,24 +1,25 @@
 # Projet KeyMood 
 ## Prélude
- Bonjour et bien venus sur Keymood avant  de suivrel'instalation possible vous devez disposer de quelque technologie
+ Bienvenue sur Keymood,   
+ avant de poursuivre l'installation vous devez avoir installer les programmes suivants
  sur votre machine **comme**:  
  
     1. npm ( min v 3.8.9)  
     2. node js ( min v 6.2.0)  
-    3. mongo ( min v 3.2.6)  
-### Instalation de la base de donée
+    3. mongo ( min v 3.2.6)
+      
+### Installation de la base de données
 -----------------------------------------
- 1. lancer mongo ```mongod```
- 2. allez dans le terminal
- 3. taper ``mongo``
- 4. taper ```use data```
- 5. allez  à la racine du  projet 
- 6. taper " mongoimport --db data --collection datas --file datas.json"
- 7. retour si c'est ok  
-  `
-  2016-06-03T17:09:52.951+0200    connected to: localhost`  
-   `2016-06-03T17:09:53.005+0200    imported 5 documents
- `
+ 1. ```$ mongod``` ( on démarre la DB )
+ 2. ```$ mongo``` (démarre le shell mongo)
+ 3. ```$ use data``` ( utilise la DB data (et la crée si elle n'existe pas )
+ 4. Allez  à la racine du  projet 
+ 5. ```$ mongoimport --db data --collection datas --file datas.json```
+ 6. output si tout a bien marché  
+  ```
+  2016-06-03T17:09:52.951+0200    connected to: localhost  
+  2016-06-03T17:09:53.005+0200    imported 5 documents
+ ```
  
 ### Démarage
 ----------------------------
@@ -35,5 +36,4 @@
 5. Web Speech API
 6. Jquery
 7. Mongoose
-8. Mocha/Chai
-9. charts.js
+8. Charts.js
