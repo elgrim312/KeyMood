@@ -4,7 +4,6 @@
 // Fonction Ajax qui incremente les données au clic
 function incrementData() {
     var categorie = $(this).prev('input').data('categorie');
-    console.log(id);
     $.ajax({
         url: '/api/up/' + categorie,
         type: "PUT",
