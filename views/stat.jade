@@ -57,7 +57,7 @@ html.nojQuery
         $(document).ready(function(){
             $('#statistiques').fadeIn(600);
                 var ctx = document.getElementById("myChart");
-                var array = [#{datas[0].number}, #{datas[1].number}, #{datas[2].number}, #{datas[3].number}, #{datas[4].number}, #{datas[5].number}, #{datas[6].number}, #{datas[7].number}];
+                var array = [#{datas[3].number}, #{datas[7].number}, #{datas[1].number}, #{datas[2].number}, #{datas[4].number}, #{datas[0].number}, #{datas[5].number}, #{datas[6].number}];
                 var myDoughnutChart = new Chart(ctx, {
                     type: 'doughnut',
                     data: {
