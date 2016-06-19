@@ -13,16 +13,16 @@ router.get('/data', function (req, res) {
             res.json({'ERROR': err});
         } else {
             res.render(
-                'stat', {title:'Stats',datas: datas}
+                'stat', {title: 'Stats', datas: datas}
             );
         }
     });
 });
 
 //Incrementation des Champs
-router.put('/up/:id', function (req, res) {
+router.put('/up/:categorie', function (req, res) {
     var categorie = req.params.categorie;
-    Data.findByIdAndUpdate(categorie, {$inc: {number: 1}}, function (err, action) {
+    Data.update({categorie: categorie}, {$inc: {number: 1}}, function (err, action) {
         if (err) return handleError(err);
         console.log(action);
     });
