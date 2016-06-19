@@ -21,8 +21,8 @@ router.get('/data', function (req, res) {
 
 //Incrementation des Champs
 router.put('/up/:id', function (req, res) {
-    var id = req.params.id;
-    Data.findByIdAndUpdate(id, {$inc: {number: 1}}, function (err, action) {
+    var categorie = req.params.categorie;
+    Data.findByIdAndUpdate(categorie, {$inc: {number: 1}}, function (err, action) {
         if (err) return handleError(err);
         console.log(action);
     });
