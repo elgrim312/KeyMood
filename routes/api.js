@@ -20,7 +20,7 @@ router.get('/data', function (req, res) {
 });
 
 //Incrementation des Champs
-router.put('/up/:categorie', function (req, res) {
+router.get('/up/:categorie', function (req, res) {
     var categorie = req.params.categorie;
     Data.findOneAndUpdate({categorie: categorie}, {$inc: {number: 1}}, function (err, action) {
         if (err) return handleError(err);

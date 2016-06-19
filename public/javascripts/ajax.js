@@ -6,7 +6,7 @@ function incrementData() {
     var categorie = $(this).prev('input').data('categorie');
     $.ajax({
         url: '/api/up/' + categorie,
-        type: "PUT",
+        type: "GET",
         error: function (xhr, text, err) {
             console.log('error: ', err);
             console.log('text: ', text);
