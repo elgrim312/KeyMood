@@ -23,77 +23,58 @@ html.nojQuery
                     | Les genres de musique les plus demandés
                 .contentStat
                     ul.statsLeft
-                       li
-                            i.icon-classique
-                            p.classique Classique
-                       li
-                            i.icon-electro
-                            p.electro Electro
-                       li
-                            i.icon-jazz
-                            p.jazz Jazz
-                       li
-                            i.icon-metal
-                            p.metal Metal
+                    //-    li
+                    //-         i.icon-classique
+                    //-         p.classique Classique
+                    //-    li
+                    //-         i.icon-electro
+                    //-         p.electro Electro
+                    //-    li
+                    //-         i.icon-jazz
+                    //-         p.jazz Jazz
+                    //-    li
+                    //-         i.icon-metal
+                    //-         p.metal Metal
                     .stats
                         canvas#myChart(width='300' height='300')
                     ul.statsRight
-                        li
-                            i.icon-pop
-                            p.pop Pop
-                        li
-                            i.icon-rnb
-                            p.rnb Rnb
-                        li
-                            i.icon-disco
-                            p.disco Disco
-                        li
-                            i.icon-rock
-                            p.rock Rock
+                        //- li
+                        //-     i.icon-pop
+                        //-     p.pop Pop
+                        //- li
+                        //-     i.icon-rnb
+                        //-     p.rnb Rnb
+                        //- li
+                        //-     i.icon-disco
+                        //-     p.disco Disco
+                        //- li
+                        //-     i.icon-rock
+                        //-     p.rock Rock
                 button.navButton
                     a(href='/interface') Rechercher une musique
     script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js")
     script(type='text/javascript').
         $(document).ready(function(){
             $('#statistiques').fadeIn(600);
-                var ctx = document.getElementById("myChart");
-                var array = [#{datas[3].number}, #{datas[7].number}, #{datas[1].number}, #{datas[2].number}, #{datas[4].number}, #{datas[0].number}, #{datas[5].number}, #{datas[6].number}];
-                var myDoughnutChart = new Chart(ctx, {
+                $.get( "https://constsynf.pagekite.me/api/songs", function( data ) {
+                    var numbers = Object.values(data.categories)
+                    var labels = Object.keys(data.categories)
+                    var backgroundColor = labels.map(function(elem){
+                        return getRandomColor();
+                    })
+                    var hoverBackgroundColor = numbers.map(function(elem){
+                        return getRandomColor();
+                    })
+                    var ctx = document.getElementById("myChart");
+                    var myDoughnutChart = new Chart(ctx, {
                     type: 'doughnut',
                     data: {
-                        labels: [
-                            "Classique",
-                            "Electro",
-                            "Jazz",
-                            "Metal",
-                            "Disco",
-                            "Pop",
-                            "RnB",
-                            "Rock"
-                            ],
+                        labels: labels,
                         datasets: [
                             {
-                                data: array,
-                                backgroundColor: [
-                                    "#E0E0E0",
-                                    "#7986CB",
-                                    "#FFD54F",
-                                    "#A1887F",
-                                    "#E57373",
-                                    "#AED581",
-                                    "#64B5F6",
-                                    "#FFB74D"
-                                    ],
-                                hoverBackgroundColor: [
-                                    "#E0E0E0",
-                                    "#7986CB",
-                                    "#FFD54F",
-                                    "#A1887F",
-                                    "#E57373",
-                                    "#AED581",
-                                    "#64B5F6",
-                                    "#FFB74D"
-                                    ],
+                                data: numbers,
+                                backgroundColor: backgroundColor,
+                                hoverBackgroundColor: hoverBackgroundColor,
                                 borderWidth : 0
                                 }
                             ]
@@ -103,3 +84,14 @@ html.nojQuery
                         }
                     });
                 });
+                });
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+                
