@@ -269,7 +269,6 @@ header  h1{
 }
 header .filters{
   display: inline-block;
-  float: right;
 }
 header .filters li{
   color: #fff;
@@ -303,11 +302,14 @@ header .filters li:before{
   margin : 50px 0 70px;
 }
 #player .partLeft>div{
+  border-radius: 17px;
   width: 330px;
   height: 445px;
   margin: 0 auto;
   background: url("../images/rolling.gif") center center no-repeat;
+  position: relative;
 }
+
 #player .content>a,
 #player li.more>a{
   text-decoration: underline;
