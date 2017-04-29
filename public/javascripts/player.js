@@ -32,6 +32,8 @@ $.ajax({
         var widget = $('#putTheWidgetHere');
         widget.css( 'background-image','url('+arraydatakey.img.url+')' );
         $('iframe').attr('src', "https://open.spotify.com/embed?uri="+arraydatakey.img.url_sound);
-        $('iframe').attr('autoplay', "true")
+        $('#play-button').trigger('click',function () {
+            console.log("click")
+        });
 
     });
