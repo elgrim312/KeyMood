@@ -2,7 +2,6 @@
  * Created by alexandrevagnair on 03/06/2016.
  */
 var title =  $('title').html();
-console.log(title);
 $.urlParam = function(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
     return results[1] || 0;
@@ -11,34 +10,27 @@ $.urlParam = function(name){
 var mot1 =$.urlParam('mot1'); // name
 var mot2 =$.urlParam('mot2'); // name
 var mot3 =$.urlParam('mot3'); // name
-var tab = [mot1, mot2, mot3];
-console.log(tab);
-var random_Tab = Math.floor(Math.random() * tab.length);
-// prend un mot dans l'index
-var result_Finale = tab[random_Tab];
-console.log(result_Finale);
-if (result_Finale != undefined) {
-    SC.initialize({
-        client_id: 'b7b0b906f719303677f1268c3d52b07b'
+var tab = {mot1, mot2, mot3};
+var data_prepare = JSON.stringify(tab);
+$.ajax({
+    method : 'POST',
+    contentType: "application/json",
+    url : 'https://constsynf.pagekite.me/api/songs',
+    data : data_prepare
+})
+    .done(function (result) {
+        console.log(result);
+        var arraydatakey = {
+            artist_name : result.data.artists.items[0].name,
+            follo : result.data.artists.items[0].followers.total,
+            img : {
+                url : result.data.artists.items[0].images[0].url,
+                url_sound : result.data.artists.items[0].uri
+            }
+        };
+        console.log(arraydatakey);
+        var widget = $('#putTheWidgetHere');
+        widget.css( 'background-image','url('+arraydatakey.img.url+')' );
+        $('iframe').attr('src', "https://open.spotify.com/embed?uri="+arraydatakey.img.url_sound)
+
     });
-    SC.get('/tracks', {
-        //filtre pour le retour des variables
-        q: result_Finale, bpm: {from: 120}
-    }).then(function (tracks) {
-        console.log(tracks);
-        console.log('genre musical ' + tracks[0].genre);
-        console.log(tracks.length);
-        var random = Math.floor(Math.random() * tracks.length);
-        if (tracks.length > 0) {
-            var url = tracks[random].permalink_url;
-            SC.oEmbed(url, {
-                element: document.getElementById('putTheWidgetHere'),
-                auto_play: true,
-                show_comments : false
-            });
-            // si les mots rechercher return un  tableau vide alors affiche ...
-        } else {
-            $('#result').text("try again");
-        }
-    });
-}

@@ -1,6 +1,3 @@
-// on appel le modele database.js
-require('./models/database');
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
